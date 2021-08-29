@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <style>
+        #spinner{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+        }
+        .grid{
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+        @media only screen and (max-width:600px) {
+            .w-50{
+                width:100% !important;
+            }
+        }
+    </style>
+</head>
+<body>
+<header class="container mt-3">
+    <h3 class="text-center text-secondary">Please Search Your Favourite Player</h3>
+    <!-- header input and search button  -->
+    <div class="input-group mb-3 w-50 mx-auto">
+        <input type="text" class="form-control" placeholder="Player Name e.g. Neymar" aria-label="Player Name e.g. Neymar" aria-describedby="" id="search-input">
+        <button class="btn btn-outline-secondary" type="button" id="search-btn">Search</button>
+    </div>
+</header>
+<main class="container my-5">
+    <!-- modal  -->
+    <!-- Button trigger modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" id="modal">
+    </div>
+  </div>
+    <!-- modal    -->
+    <p id="error" class="text-danger d-none text-center"> Type correct keyword or check internet connection  </p> 
+    <!-- spinner  -->
+    <div class="d-none"  id="spinner">
+        <div class="">
+            <div class="spinner-grow text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+        </div>
+    </div>
+    <!--  -->
+    <article id="parent" class=" row row-cols-1 row-cols-md-3 g-4" onload="stopSpinner()">
+    </article>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+</html>
